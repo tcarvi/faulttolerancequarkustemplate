@@ -1,0 +1,2 @@
+# faulttolerancequarkustemplate
+Implementation of Fault Tolerance quarkus especification
