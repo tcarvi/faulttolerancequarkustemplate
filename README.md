@@ -148,5 +148,8 @@ public CompletionStage<Connection> serviceA() {
    return future;
 }
 The above behaviour makes it easier to apply Fault Tolerance logic around a CompletionStage which was returned by another component, e.g. applying @Asynchronous, @Retry and @Timeout to a JAX-RS client call.
-
 It is apparent that when using @Asynchronous, it is much more desirable to specify the return type CompletionStage over Future to maximise the usage of Fault Tolerance.
+A call to a method annotated with @Asynchronous will never throw an exception directly. Instead, the returned Future or CompletionStage will report that its task failed with the exception which would have been thrown.
+For example, if @Asynchronous is used with @Bulkhead on a method which returns a Future and the bulkhead queue is full when the method is called, the method will return a Future where calling isDone() returns true and calling get() will throw an ExecutionException which wraps a BulkheadException.
+Timeout prevents from the execution from waiting forever. It is recommended that a microservice invocation should have timeout associated with.
+A method or a class can be annotated with @Timeout, which means the method or the methods under the class will have Timeout policy applied.
