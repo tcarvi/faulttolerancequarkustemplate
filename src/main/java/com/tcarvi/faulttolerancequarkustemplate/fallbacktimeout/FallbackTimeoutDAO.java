@@ -1,18 +1,10 @@
-package com.tcarvi.faulttolerancequarkustemplate.fallbacktimeout;
+package com.tcarvi.faulttolerancequarkustemplate.controller.fallbacktimeout;
 
-import org.eclipse.microprofile.faulttolerance.Fallback;
-import org.eclipse.microprofile.faulttolerance.Timeout;
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import javax.enterprise.context.SessionScoped;
 
-@Path("/fallbackTimeoutCtrl")
-@ApplicationScoped
-public class FallbackTimeoutController {
+@SessionScoped
+public class FallbackTimeoutService {
 
-    @Fallback(fallbackMethod = "fallbackhandler")
-    @Timeout(50) // timeout is 5000ms = 5s
-    @GET
     public String checkTimeout() throws InterruptedException {
         try {
             Thread.sleep(700L); // Suposição do tempo do processamento.

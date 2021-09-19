@@ -13,7 +13,7 @@ public class TimeoutController {
     @GET
     public String checkTimeout() {
         try {
-            Thread.sleep(70000L); // Suposição do tempo do processamento.
+            Thread.sleep(700L); // Suposição do tempo do processamento.
         } catch (InterruptedException e) {
             // Tratamento do problema de atraso no processamento.
         }

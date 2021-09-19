@@ -6,6 +6,6 @@ import javax.ws.rs.core.Application;
 /**
  *
  */
-@ApplicationPath("/data")
+@ApplicationPath("/aplicationName")
 public class FaulttolerancequarkustemplateRestApplication extends Application {
 }
