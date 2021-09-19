@@ -23,11 +23,17 @@
       <artifactId>quarkus-smallrye-fault-tolerance</artifactId>
       <version>${version.quarkus}</version>
     </dependency>
-    <!-- Microprofile Spec Implementation -->
-    <dependency>
+    <!-- Microprofile Spec Implementation. -->
+    <!-- Não pode descomentar, pois Quarkus já está usando outra versão. Há incompatibilidade, se for descomentada. -->
+    <!-- <dependency>
       <groupId>org.eclipse.microprofile.fault-tolerance</groupId>
       <artifactId>microprofile-fault-tolerance-api</artifactId>
       <version>2.0</version>
+    </dependency>     -->
+    <!-- YAML for config file, at src/main/resources/application.yaml -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-config-yaml</artifactId>
     </dependency>
   </dependencies>
   <build>
