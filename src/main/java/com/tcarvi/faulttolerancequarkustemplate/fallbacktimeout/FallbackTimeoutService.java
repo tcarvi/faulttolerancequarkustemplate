@@ -1,5 +1,4 @@
-package com.tcarvi.faulttolerancequarkustemplate.controller.fallbacktimeout;
-
+package com.tcarvi.faulttolerancequarkustemplate.fallbacktimeout;
 import javax.enterprise.context.SessionScoped;
 
 @SessionScoped

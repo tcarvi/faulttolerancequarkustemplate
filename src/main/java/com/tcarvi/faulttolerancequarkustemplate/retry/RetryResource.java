@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 
 @Path("/retryCtrl")
 @Singleton
-public class RetryController {
+public class RetryResource {
 
     @Inject private RetryInjection RetryInjection;
 

@@ -1,4 +1,4 @@
-package com.tcarvi.faulttolerancequarkustemplate.controller.fallbacktimeout;
+package com.tcarvi.faulttolerancequarkustemplate.fallbacktimeout;
 
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Timeout;
