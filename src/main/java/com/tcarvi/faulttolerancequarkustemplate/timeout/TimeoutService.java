@@ -1,7 +1,8 @@
 package com.tcarvi.faulttolerancequarkustemplate.timeout;
 
 public class TimeoutService {
-    public String getText() {
+
+    public String timeoutServiceExecution() {
         try {
             Thread.sleep(700L); // Suposição do tempo do processamento.
         } catch (InterruptedException e) {
@@ -9,5 +10,5 @@ public class TimeoutService {
         }
         return "Sem problema de Timeout. Processo concluiu com sucesso antes do timeout.";
     }
-}
 
+}
