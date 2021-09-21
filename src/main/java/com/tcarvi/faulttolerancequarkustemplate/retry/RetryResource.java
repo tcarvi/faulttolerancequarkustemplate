@@ -6,16 +6,17 @@ import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-@Path("/retryCtrl")
+@Path("/endpointRetry")
 @Singleton
 public class RetryResource {
 
-    @Inject private RetryInjection RetryInjection;
+    @Inject
+    RetryService retryService;
 
     @GET
     public void RetryControllerWithInjectionUse() {
         // If retryController.doWork() fails, try again until 2 times.
-        String theResult = RetryInjection.doWork();
+        String theResult = retryService.doWork();
         System.out.println(theResult);
     }
 }

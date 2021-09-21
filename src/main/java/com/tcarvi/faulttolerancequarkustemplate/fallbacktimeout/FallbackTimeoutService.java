@@ -1,7 +1,5 @@
 package com.tcarvi.faulttolerancequarkustemplate.fallbacktimeout;
-import javax.enterprise.context.SessionScoped;
 
-@SessionScoped
 public class FallbackTimeoutService {
 
     public String checkTimeout() throws InterruptedException {
