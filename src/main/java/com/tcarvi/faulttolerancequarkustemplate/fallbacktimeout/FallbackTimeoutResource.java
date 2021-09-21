@@ -19,7 +19,7 @@ public class FallbackTimeoutResource {
     @Fallback(fallbackMethod = "fallbackTimeoutService.fallbackhandler")
     @Timeout(50) // timeout is 5000ms = 5s
     @GET
-    public String FallbackTimeoutResourceExecution() throws InterruptedException {
+    public String fallbackTimeoutResourceExecution() throws InterruptedException {
         return fallbackTimeoutService.checkTimeout();
     }
 

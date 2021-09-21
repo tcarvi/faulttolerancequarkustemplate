@@ -14,9 +14,9 @@ public class RetryResource {
     RetryService retryService;
 
     @GET
-    public void RetryControllerWithInjectionUse() {
+    public void retryExecution() {
         // If retryController.doWork() fails, try again until 2 times.
-        String theResult = retryService.doWork();
+        String theResult = retryService.retry();
         System.out.println(theResult);
     }
 }
