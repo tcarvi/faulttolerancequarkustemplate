@@ -7,6 +7,6 @@ import javax.ws.rs.core.Application;
  *
  */
 @ApplicationPath("/applicationName")
-public class FaulttolerancequarkustemplateRestApplication extends Application {
+public class FaultToleranceQuarkusTemplateApplication extends Application {
     // Scripts adicionais de inicialização do app.
 }

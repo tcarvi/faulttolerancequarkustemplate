@@ -2,7 +2,6 @@ package com.tcarvi.faulttolerancequarkustemplate.fallbacktimeout;
 
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Timeout;
-
 import javax.enterprise.context.SessionScoped;
 
 import javax.inject.Inject;
@@ -16,11 +15,15 @@ public class FallbackTimeoutResource {
     @Inject
     FallbackTimeoutService fallbackTimeoutService;
 
-    @Fallback(fallbackMethod = "fallbackTimeoutService.fallbackhandler")
+    @Fallback(fallbackMethod = "callToFallbackTimeoutServiceHandler")
     @Timeout(50) // timeout is 5000ms = 5s
     @GET
-    public String fallbackTimeoutResourceExecution() throws InterruptedException {
-        return fallbackTimeoutService.checkTimeout();
+    public String fallbackTimeoutResourceExecution() {
+        return fallbackTimeoutService.check();
+    }
+
+    public String callToFallbackTimeoutServiceHandler() {
+        return fallbackTimeoutService.fallback();
     }
 
 }
