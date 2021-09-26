@@ -1,13 +1,13 @@
-package com.tcarvi.faulttolerancequarkustemplate.fallbacktimeout;
+package com.tcarvi.faulttolerancequarkustemplate.retry;
 
 import javax.enterprise.context.ApplicationScoped;
 
 import org.jboss.logging.Logger;
 
 @ApplicationScoped
-public class FallbackTimeoutService {
+public class RetryService {
 
-    private static final Logger LOG = Logger.getLogger(FallbackTimeoutService.class);
+    private static final Logger LOG = Logger.getLogger(RetryService.class);
 
     public String exec() {
         try {
@@ -18,11 +18,6 @@ public class FallbackTimeoutService {
         } finally {
             // Execução necessária por causa do código do try-catch anterior.
         }
-        return "Sem problema de Timeout. Processo concluiu com sucesso antes do timeout.";
+        return "Sem problema. Ou resolvido com retry. Processo concluiu com sucesso antes do timeout.";
     }
-
-    public String fallback() {
-        return "fallbackTimeoutServiceHandler executed";
-    }
-
 }

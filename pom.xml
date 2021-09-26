@@ -61,7 +61,7 @@
     </dependency>
   </dependencies>
   <build>
-    <plugins>ok
+    <plugins>
       <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
@@ -74,14 +74,14 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>ok
+      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
           <parameters>true</parameters>
         </configuration>
       </plugin>
-      <plugin>ok
+      <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire-plugin.version}</version>
         <configuration>
